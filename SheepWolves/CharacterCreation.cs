@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SheepWolves
 {
-    public partial class Form1 : Form
+    public partial class CharacterCreation : Form
     {
-        public Form1()
+        public CharacterCreation(int playerNumber)
         {
             InitializeComponent();
-        }
-
-        private void startGameButton_Click(object sender, EventArgs e)
-        {
-            Application.Run(new CharacterCreation(Convert.ToInt16(playerNumberNumeric.Value)));
         }
     }
 }
