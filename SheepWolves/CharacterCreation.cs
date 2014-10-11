@@ -16,5 +16,10 @@ namespace SheepWolves
         {
             InitializeComponent();
         }
+
+        private void playerRegister_Click(object sender, EventArgs e)
+        {
+            Battle.playerCreate(playerNameTextBox.Text);
+        }
     }
 }

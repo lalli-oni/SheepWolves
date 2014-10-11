@@ -8,6 +8,16 @@ namespace SheepWolves
 {
     class Battle
     {
-      
+
+        public static int playerNumberGet(int pNumber)
+        {
+            int playerNumber = pNumber;
+            return playerNumber;
+        }
+
+        public static void playerCreate(string pName)
+        {
+
+        }
     }
 }

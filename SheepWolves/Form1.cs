@@ -19,7 +19,7 @@ namespace SheepWolves
 
         private void startGameButton_Click(object sender, EventArgs e)
         {
-            Application.Run(new CharacterCreation(Convert.ToInt16(playerNumberNumeric.Value)));
+            
         }
     }
 }
