@@ -17,6 +17,12 @@ namespace SheepWolves
     public partial class Form1 : Form
     {
         Battle playerCreation = new Battle();
+        XDocument currentSession = new XDocument(
+                new XElement("root",
+                    new XElement("battle",
+                        new XElement("playersSettings"),
+                        new XElement("playerList")))
+                );
 
         public Form1()
         {
@@ -25,13 +31,7 @@ namespace SheepWolves
 
         private void startGameButton_Click(object sender, EventArgs e)
         {
-            XDocument currentSession = new XDocument(
-                new XElement("root",
-                    new XElement("battle",
-                        new XElement("playersSettings",
-                            new XAttribute("playerNumber", playerNumberNumeric.Value)),
-                        new XElement("playerList")))
-                );
+            currentSession.Add(new XAttribute("playerNumber", playerNumberNumeric.Value));
             
             int xmlFileNumber = 0001;
             int currPlayerNumber = Convert.ToInt32(playerNumberNumeric.Value);
