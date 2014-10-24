@@ -8,16 +8,23 @@ namespace SheepWolves
 {
     static class Program
     {
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static public void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            FormHandler formHandling = new FormHandler();
+            formHandling.splashForm(true);
+        }
 
+        static public void initCharacterCreation(int playerNumber)
+        {
+            formHandling.splashForm(false);
+            formHandling.charGenForm(true, playerNumber);
         }
     }
 }

@@ -40,10 +40,19 @@ namespace SheepWolves
             {
                 detail.SetAttributeValue("playerNumer", playerNumberNumeric.Value);
             }
-            
-            saveXML();
 
-            //Form.Close();
+            try
+            {
+                saveXML();
+                Program.Main(2, (int) playerNumberNumeric.Value);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Was not able to save!");
+                throw;
+            }
+
+            
         }
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SheepWolves
 {
@@ -14,7 +15,6 @@ namespace SheepWolves
             set { _playerNumber = value; }
         }
         private static int _playerNumber;
-
 
         
     }
