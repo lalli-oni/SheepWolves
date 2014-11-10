@@ -16,6 +16,8 @@ namespace SheepWolves
 
     public partial class Form1 : Form
     {
+        private int playerNumber = 0;
+        List<int> playerNameList = new List<int>(); 
 
         int xmlFileNumber = 10001;
         string currentDirectory = Directory.GetCurrentDirectory();
@@ -31,34 +33,12 @@ namespace SheepWolves
         public Form1()
         {
             InitializeComponent();
+
         }
-
-        private void startGameButton_Click(object sender, EventArgs e)
-        {
-
-            foreach (var detail in currentSession.Descendants("battle"))
-            {
-                detail.SetAttributeValue("playerNumer", playerNumberNumeric.Value);
-            }
-
-            try
-            {
-                saveXML();
-                Program.Main(2, (int) playerNumberNumeric.Value);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Was not able to save!");
-                throw;
-            }
-
-            
-        }
-
 
         public void saveXML()
         {
-            int currPlayerNumber = Convert.ToInt32(playerNumberNumeric.Value);
+            int currPlayerNumber = Convert.ToInt32(playerNumber);
             bool fileExists = File.Exists(currentDirectory + currPlayerNumber + "SAV" + xmlFileNumber + ".xml");
 
             for (int i = 0; i < 20000; i++)
@@ -73,6 +53,27 @@ namespace SheepWolves
                     currentSession.Save(currPlayerNumber + "SAV" + xmlFileNumber + ".xml");
                     break;
                 }
+            }
+        }
+
+        private void saveGameButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newGameButton_Click(object sender, EventArgs e)
+        {
+            if (playerNumberInputTextBox.Text.GetType() != typeof(int))
+            {
+                MessageBox.Show("You need to write a number between 5 to 10 in the player number box.","Error",MessageBoxButtons.OK);
+            }
+            else
+            {
+                playerNumberInputTextBox.Visible = false;
+                playerNumberLabelDynamic.Visible = true;
+                playerNumber = Convert.ToInt16(playerNumberInputTextBox.Text);
+                playerNumberLabelDynamic.Text = playerNumber.ToString();
+                CharacterCreation charPrompt = new CharacterCreation(playerNumber);
             }
         }
 
