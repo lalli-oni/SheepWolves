@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.newGameButton = new System.Windows.Forms.Button();
             this.saveGameButton = new System.Windows.Forms.Button();
             this.playerNumberLabelStatic = new System.Windows.Forms.Label();
@@ -57,6 +58,12 @@
             this.deadList = new System.Windows.Forms.ListView();
             this.playerDeadLabel = new System.Windows.Forms.Label();
             this.playerNumberInputTextBox = new System.Windows.Forms.TextBox();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.inputTextbox = new System.Windows.Forms.TextBox();
+            this.registerPlayerButton = new System.Windows.Forms.Button();
+            this.playerAliveNumberLabelStatic = new System.Windows.Forms.Label();
+            this.playerAliveNumberLabelDynamic = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.playerPicture1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicture2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicture3)).BeginInit();
@@ -135,6 +142,7 @@
             this.playerPicture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture1.TabIndex = 6;
             this.playerPicture1.TabStop = false;
+            this.playerPicture1.Visible = false;
             // 
             // label1
             // 
@@ -145,6 +153,7 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Player 1 Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Visible = false;
             // 
             // label2
             // 
@@ -153,8 +162,9 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Player 1 Name";
+            this.label2.Text = "Player 2 Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Visible = false;
             // 
             // playerPicture2
             // 
@@ -165,6 +175,7 @@
             this.playerPicture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture2.TabIndex = 8;
             this.playerPicture2.TabStop = false;
+            this.playerPicture2.Visible = false;
             // 
             // label3
             // 
@@ -173,8 +184,9 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Player 1 Name";
+            this.label3.Text = "Player 3 Name";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Visible = false;
             // 
             // playerPicture3
             // 
@@ -185,6 +197,7 @@
             this.playerPicture3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture3.TabIndex = 10;
             this.playerPicture3.TabStop = false;
+            this.playerPicture3.Visible = false;
             // 
             // label4
             // 
@@ -193,8 +206,9 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Player 1 Name";
+            this.label4.Text = "Player 4 Name";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Visible = false;
             // 
             // playerPicture4
             // 
@@ -205,6 +219,7 @@
             this.playerPicture4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture4.TabIndex = 12;
             this.playerPicture4.TabStop = false;
+            this.playerPicture4.Visible = false;
             // 
             // label5
             // 
@@ -213,8 +228,9 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 13);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Player 1 Name";
+            this.label5.Text = "Player 5 Name";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Visible = false;
             // 
             // playerPicture5
             // 
@@ -225,6 +241,7 @@
             this.playerPicture5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture5.TabIndex = 14;
             this.playerPicture5.TabStop = false;
+            this.playerPicture5.Visible = false;
             // 
             // label6
             // 
@@ -233,8 +250,9 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Player 1 Name";
+            this.label6.Text = "Player 6 Name";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.Visible = false;
             // 
             // playerPicture6
             // 
@@ -245,6 +263,7 @@
             this.playerPicture6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture6.TabIndex = 16;
             this.playerPicture6.TabStop = false;
+            this.playerPicture6.Visible = false;
             // 
             // label7
             // 
@@ -253,8 +272,9 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 19;
-            this.label7.Text = "Player 1 Name";
+            this.label7.Text = "Player 7 Name";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.Visible = false;
             // 
             // playerPicture7
             // 
@@ -265,6 +285,7 @@
             this.playerPicture7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture7.TabIndex = 18;
             this.playerPicture7.TabStop = false;
+            this.playerPicture7.Visible = false;
             // 
             // label8
             // 
@@ -273,8 +294,9 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 21;
-            this.label8.Text = "Player 1 Name";
+            this.label8.Text = "Player 8 Name";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label8.Visible = false;
             // 
             // playerPicture8
             // 
@@ -285,6 +307,7 @@
             this.playerPicture8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture8.TabIndex = 20;
             this.playerPicture8.TabStop = false;
+            this.playerPicture8.Visible = false;
             // 
             // label9
             // 
@@ -293,8 +316,9 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 13);
             this.label9.TabIndex = 23;
-            this.label9.Text = "Player 1 Name";
+            this.label9.Text = "Player 9 Name";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Visible = false;
             // 
             // playerPicture9
             // 
@@ -305,16 +329,18 @@
             this.playerPicture9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture9.TabIndex = 22;
             this.playerPicture9.TabStop = false;
+            this.playerPicture9.Visible = false;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(459, 298);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 13);
+            this.label10.Size = new System.Drawing.Size(82, 13);
             this.label10.TabIndex = 25;
-            this.label10.Text = "Player 1 Name";
+            this.label10.Text = "Player 10 Name";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.Visible = false;
             // 
             // playerPicture10
             // 
@@ -325,6 +351,7 @@
             this.playerPicture10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture10.TabIndex = 24;
             this.playerPicture10.TabStop = false;
+            this.playerPicture10.Visible = false;
             // 
             // deadList
             // 
@@ -351,11 +378,63 @@
             this.playerNumberInputTextBox.Size = new System.Drawing.Size(20, 20);
             this.playerNumberInputTextBox.TabIndex = 28;
             // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.Location = new System.Drawing.Point(38, 332);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 24);
+            this.statusLabel.TabIndex = 29;
+            // 
+            // inputTextbox
+            // 
+            this.inputTextbox.Location = new System.Drawing.Point(38, 360);
+            this.inputTextbox.Name = "inputTextbox";
+            this.inputTextbox.Size = new System.Drawing.Size(100, 20);
+            this.inputTextbox.TabIndex = 30;
+            this.inputTextbox.Visible = false;
+            this.inputTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputTextbox_KeyPress);
+            // 
+            // registerPlayerButton
+            // 
+            this.registerPlayerButton.Location = new System.Drawing.Point(145, 356);
+            this.registerPlayerButton.Name = "registerPlayerButton";
+            this.registerPlayerButton.Size = new System.Drawing.Size(75, 23);
+            this.registerPlayerButton.TabIndex = 31;
+            this.registerPlayerButton.Text = "Register Player";
+            this.registerPlayerButton.UseVisualStyleBackColor = true;
+            this.registerPlayerButton.Visible = false;
+            this.registerPlayerButton.Click += new System.EventHandler(this.registerPlayerButton_Click);
+            // 
+            // playerAliveNumberLabelStatic
+            // 
+            this.playerAliveNumberLabelStatic.AutoSize = true;
+            this.playerAliveNumberLabelStatic.Location = new System.Drawing.Point(447, 13);
+            this.playerAliveNumberLabelStatic.Name = "playerAliveNumberLabelStatic";
+            this.playerAliveNumberLabelStatic.Size = new System.Drawing.Size(122, 13);
+            this.playerAliveNumberLabelStatic.TabIndex = 32;
+            this.playerAliveNumberLabelStatic.Text = "Number of Players Alive:";
+            // 
+            // playerAliveNumberLabelDynamic
+            // 
+            this.playerAliveNumberLabelDynamic.AutoSize = true;
+            this.playerAliveNumberLabelDynamic.Location = new System.Drawing.Point(576, 13);
+            this.playerAliveNumberLabelDynamic.Name = "playerAliveNumberLabelDynamic";
+            this.playerAliveNumberLabelDynamic.Size = new System.Drawing.Size(13, 13);
+            this.playerAliveNumberLabelDynamic.TabIndex = 33;
+            this.playerAliveNumberLabelDynamic.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 428);
+            this.Controls.Add(this.playerAliveNumberLabelDynamic);
+            this.Controls.Add(this.playerAliveNumberLabelStatic);
+            this.Controls.Add(this.registerPlayerButton);
+            this.Controls.Add(this.inputTextbox);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.playerNumberInputTextBox);
             this.Controls.Add(this.playerDeadLabel);
             this.Controls.Add(this.deadList);
@@ -436,6 +515,12 @@
         private System.Windows.Forms.ListView deadList;
         private System.Windows.Forms.Label playerDeadLabel;
         private System.Windows.Forms.TextBox playerNumberInputTextBox;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.TextBox inputTextbox;
+        private System.Windows.Forms.Button registerPlayerButton;
+        private System.Windows.Forms.Label playerAliveNumberLabelStatic;
+        private System.Windows.Forms.Label playerAliveNumberLabelDynamic;
+        private System.Windows.Forms.Timer timer1;
 
     }
 }
