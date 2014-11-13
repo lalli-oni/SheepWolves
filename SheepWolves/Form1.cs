@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
@@ -15,8 +16,10 @@ namespace SheepWolves
 {
     public partial class Form1 : Form
     {
+        private Player tempPlayer;
         private int playerNumber = 0;
-        List<string> playerNameList = new List<string>();
+        List<Player> playerList = new List<Player>();
+        List<Animal> statesList = new List<Animal>(); 
         private string gameState = "Intro";
         int currentPlayerNaming = 0;
 
@@ -29,7 +32,6 @@ namespace SheepWolves
                     new XElement("battle",
                         new XElement("playerList")))
                 );
-
 
         public Form1()
         {
@@ -79,12 +81,35 @@ namespace SheepWolves
                 playerNumberLabelDynamic.Text = playerNumber.ToString();
                 newGameButton.Enabled = false;
                 inputTextbox.Select();
+                prepareStatesList(playerNumber);
             }
             else
             {
                 MessageBox.Show("You need to write a number between 5 to 10 in the player number box.", "Error", MessageBoxButtons.OK);
             }
+        }
 
+        void prepareStatesList(int playerNumber)
+        {
+                    for (int i = 0; i < playerNumber/4 + 1; i++)
+                    {
+                        statesList.Add(Animal.Wolf);
+                    }
+                    for (int i = 0; i < playerNumber * 0.6; i++)
+                    {
+                        statesList.Add(Animal.Sheep);
+                    }
+            MessageBox.Show(statesList.Count.ToString());
+            if (statesList.Count < playerNumber)
+            {
+                MessageBox.Show("Nope!");
+            }
+        }
+
+        void battleMode()
+        {
+            statusLabel.Text = "Click button to start voting";
+            registerPlayerButton.Text = "Vote";
         }
 
         private void registerPlayerButton_Click(object sender, EventArgs e)
@@ -93,70 +118,82 @@ namespace SheepWolves
             {
                 if (currentPlayerNaming <= playerNumber)
                 {
-                    playerNameList.Add(inputTextbox.Text);
+                    Player p = new Player();
+                    p.Name = inputTextbox.Text;
+                    p.State = State.Alive;
+                    Random rng = new Random();
+                    int randomNumber = rng.Next(statesList.Count);
+                    p.Sheep = statesList[randomNumber];
+                    statesList.RemoveAt(randomNumber);
+                    playerList.Add(p);
+
                     switch (currentPlayerNaming)
                     {
                         #region cases 1-10
                         case 1:
-                            label1.Text = inputTextbox.Text;
+                            label1.Text = p.Name;
                             label1.Visible = true;
                             playerPicture1.Visible = true;
                             break;
                         case 2:
-                            label2.Text = inputTextbox.Text;
+                            label2.Text = p.Name;
                             label2.Visible = true;
                             playerPicture2.Visible = true;
                             break;
                         case 3:
-                            label3.Text = inputTextbox.Text;
+                            label3.Text = p.Name;
                             label3.Visible = true;
                             playerPicture3.Visible = true;
                             break;
                         case 4:
-                            label4.Text = inputTextbox.Text;
+                            label4.Text = p.Name;
                             label4.Visible = true;
                             playerPicture4.Visible = true;
                             break;
                         case 5:
-                            label5.Text = inputTextbox.Text;
+                            label5.Text = p.Name;
                             label5.Visible = true;
                             playerPicture5.Visible = true;
                             break;
                         case 6:
-                            label6.Text = inputTextbox.Text;
+                            label6.Text = p.Name;
                             label6.Visible = true;
                             playerPicture6.Visible = true;
                             break;
                         case 7:
-                            label7.Text = inputTextbox.Text;
+                            label7.Text = p.Name;
                             label7.Visible = true;
                             playerPicture7.Visible = true;
                             break;
                         case 8:
-                            label8.Text = inputTextbox.Text;
+                            label8.Text = p.Name;
                             label8.Visible = true;
                             playerPicture8.Visible = true;
                             break;
                         case 9:
-                            label9.Text = inputTextbox.Text;
+                            label9.Text = p.Name;
                             label9.Visible = true;
                             playerPicture9.Visible = true;
                             break;
                         case 10:
-                            label10.Text = inputTextbox.Text;
+                            label10.Text = p.Name;
                             label10.Visible = true;
                             playerPicture10.Visible = true;
                             break;
                         #endregion
                     }
-                    playerAliveNumberLabelDynamic.Text = playerNameList.Count.ToString();
+                    playerAliveNumberLabelDynamic.Text = playerList.Count.ToString();
                     currentPlayerNaming++;
                     statusLabel.Text = "Input Player " + currentPlayerNaming + " Name:";
                     inputTextbox.Enabled = true;
+                    MessageBox.Show("Welcome " + p.Name + ", you are a " + p.Sheep + ".");
                     if (currentPlayerNaming > playerNumber)
                     {
                         inputTextbox.Visible = false;
                         statusLabel.Text = "All players Registered";
+                        registerPlayerButton.Text = "Start Voting!";
+                        registerPlayerButton.Enabled = false;
+                        battleMode();
                     }
                 }
                 else
@@ -172,6 +209,11 @@ namespace SheepWolves
             {
                 registerPlayerButton_Click(null, null);
             }
+        }
+
+        static void timer1_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            
         }
 
     }
