@@ -11,6 +11,7 @@ using System.Timers;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using SheepWolves.Enum;
 
 namespace SheepWolves
 {
@@ -19,8 +20,8 @@ namespace SheepWolves
         private Player tempPlayer;
         private int playerNumber = 0;
         List<Player> playerList = new List<Player>();
-        List<Animal> statesList = new List<Animal>(); 
-        private string gameState = "Intro";
+        List<Animal> statesList = new List<Animal>();
+        private GameStates gameStates;
         int currentPlayerNaming = 0;
 
         int xmlFileNumber = 10001;
@@ -36,6 +37,7 @@ namespace SheepWolves
         public Form1()
         {
             InitializeComponent();
+            gameStates = GameStates.Intro;
 
         }
 
@@ -70,7 +72,7 @@ namespace SheepWolves
             if (int.TryParse(playerNumberInputTextBox.Text, out value) && value >= 5 && value <= 10)
             {
                 currentPlayerNaming++;
-                gameState = "Character Creation";
+                gameStates = GameStates.Naming;
                 playerNumberInputTextBox.Visible = false;
                 playerNumberLabelDynamic.Visible = true;
                 registerPlayerButton.Visible = true;
@@ -89,13 +91,14 @@ namespace SheepWolves
             }
         }
 
-        void prepareStatesList(int playerNumber)
+        void prepareStatesList(int playerNumberPara)
         {
-                    for (int i = 0; i < playerNumber/4 + 1; i++)
+            Convert.ToDecimal(playerNumberPara);
+            for (decimal i = 0; i < playerNumberPara - playerNumberPara * Convert.ToDecimal(0.7) + 1; i++)
                     {
                         statesList.Add(Animal.Wolf);
                     }
-                    for (int i = 0; i < playerNumber * 0.6; i++)
+            for (decimal i = 0; i < playerNumberPara - playerNumberPara / 3; i++)
                     {
                         statesList.Add(Animal.Sheep);
                     }
@@ -108,8 +111,10 @@ namespace SheepWolves
 
         void battleMode()
         {
+            gameStates = GameStates.Accusing;
             statusLabel.Text = "Click button to start voting";
             registerPlayerButton.Text = "Vote";
+            registerPlayerButton.Enabled = true;
         }
 
         private void registerPlayerButton_Click(object sender, EventArgs e)
