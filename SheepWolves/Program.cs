@@ -10,7 +10,8 @@ namespace SheepWolves
     {
 
         /// <summary>
-        /// The main entry point for the application.
+        /// The main entry
+        ///  point for the application.
         /// </summary>
         [STAThread]
         static public void Main()

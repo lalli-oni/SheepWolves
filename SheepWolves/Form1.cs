@@ -21,7 +21,7 @@ namespace SheepWolves
         private int playerNumber = 0;
         List<Player> playerList = new List<Player>();
         List<Animal> statesList = new List<Animal>();
-        private GameStates gameStates;
+        private GameStates gameStates = GameStates.Intro;
         int currentPlayerNaming = 0;
 
         int xmlFileNumber = 10001;
@@ -37,7 +37,7 @@ namespace SheepWolves
         public Form1()
         {
             InitializeComponent();
-            gameStates = GameStates.Intro;
+            playerNumberInputTextBox.Select();
 
         }
 
@@ -93,15 +93,145 @@ namespace SheepWolves
 
         void prepareStatesList(int playerNumberPara)
         {
-            Convert.ToDecimal(playerNumberPara);
-            for (decimal i = 0; i < playerNumberPara - playerNumberPara * Convert.ToDecimal(0.7) + 1; i++)
-                    {
-                        statesList.Add(Animal.Wolf);
-                    }
-            for (decimal i = 0; i < playerNumberPara - playerNumberPara / 3; i++)
-                    {
-                        statesList.Add(Animal.Sheep);
-                    }
+            #region switchCase
+            switch (playerNumberPara)
+            {
+                case 5:
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    break;
+                case 6:
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    break;
+                case 7:
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    break;
+                case 8:
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    break;
+                case 9:
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    break;
+                case 10:
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    break;
+                case 11:
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    break;
+                case 12:
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    break;
+                case 13:
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    break;
+                case 14:
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    break;
+                case 15:
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Wolf);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    statesList.Add(Animal.Sheep);
+                    break;
+                default:
+                    MessageBox.Show("omg, prepareStateList switch out of index.");
+                    break;
+#endregion
+            }
             MessageBox.Show(statesList.Count.ToString());
             if (statesList.Count < playerNumber)
             {
@@ -192,6 +322,7 @@ namespace SheepWolves
                     statusLabel.Text = "Input Player " + currentPlayerNaming + " Name:";
                     inputTextbox.Enabled = true;
                     MessageBox.Show("Welcome " + p.Name + ", you are a " + p.Sheep + ".");
+                    inputTextbox.Text = "";
                     if (currentPlayerNaming > playerNumber)
                     {
                         inputTextbox.Visible = false;
@@ -201,24 +332,24 @@ namespace SheepWolves
                         battleMode();
                     }
                 }
-                else
-                {
-                    
-                }
             }
         }
 
         private void inputTextbox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Return))
-            {
-                registerPlayerButton_Click(null, null);
-            }
+                if (e.KeyChar == Convert.ToChar(Keys.Return))
+                {
+                    registerPlayerButton_Click(null, null);
+                }
+            
         }
 
-        static void timer1_Elapsed(object sender, ElapsedEventArgs e)
+        private void playerNumberInputTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (e.KeyChar == Convert.ToChar(Keys.Return))
+            {
+                newGameButton_Click(null, null);
+            }
         }
 
     }

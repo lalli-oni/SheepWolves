@@ -377,6 +377,7 @@
             this.playerNumberInputTextBox.Name = "playerNumberInputTextBox";
             this.playerNumberInputTextBox.Size = new System.Drawing.Size(20, 20);
             this.playerNumberInputTextBox.TabIndex = 28;
+            this.playerNumberInputTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.playerNumberInputTextBox_KeyPress);
             // 
             // statusLabel
             // 
