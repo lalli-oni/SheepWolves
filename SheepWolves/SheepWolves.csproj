@@ -45,12 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Battle.cs" />
-    <Compile Include="CharacterCreation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CharacterCreation.Designer.cs">
-      <DependentUpon>CharacterCreation.cs</DependentUpon>
-    </Compile>
     <Compile Include="Enum\GameStates.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -58,16 +52,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHandler.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formhandling.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CharacterCreation.resx">
-      <DependentUpon>CharacterCreation.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon-quantumsheep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\icon-quantumsheepBW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

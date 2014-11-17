@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using SheepWolves.Enum;
+using SheepWolves.Properties;
+
 
 namespace SheepWolves
 {
@@ -232,19 +234,166 @@ namespace SheepWolves
                     break;
 #endregion
             }
-            MessageBox.Show(statesList.Count.ToString());
             if (statesList.Count < playerNumber)
             {
                 MessageBox.Show("Nope!");
             }
         }
 
-        void battleMode()
+        void battleMode(int playerVoting)
         {
-            gameStates = GameStates.Accusing;
-            statusLabel.Text = "Click button to start voting";
-            registerPlayerButton.Text = "Vote";
-            registerPlayerButton.Enabled = true;
+            voteStartButton.Visible = false;
+            statusLabel.Visible = true;
+                MessageBox.Show("Next player to vote is: " + playerList[playerVoting].Name);
+                if(playerList[playerVoting].Sheep == Animal.Sheep)
+                {
+                    statusLabel.Text = playerList[playerVoting].Name + ", You are a sheep, please select a someone to accuse!";
+                    
+            switch (playerVoting)
+            {
+                #region longswitch... DONT OPEN!
+                case 0:
+                    playerPicture1.Image =
+                        Image.FromFile("../Resources/icon-quantumsheepBW.png");
+                    playerPicture2.MouseClick += new MouseEventHandler((o, a) => registerVote(1, playerVoting));
+                    playerPicture3.MouseClick += new MouseEventHandler((o, a) => registerVote(2, playerVoting));
+                    playerPicture4.MouseClick += new MouseEventHandler((o, a) => registerVote(3, playerVoting));
+                    playerPicture5.MouseClick += new MouseEventHandler((o, a) => registerVote(4, playerVoting));
+                    playerPicture6.MouseClick += new MouseEventHandler((o, a) => registerVote(5, playerVoting));
+                    playerPicture7.MouseClick += new MouseEventHandler((o, a) => registerVote(6, playerVoting));
+                    playerPicture8.MouseClick += new MouseEventHandler((o, a) => registerVote(7, playerVoting));
+                    playerPicture9.MouseClick += new MouseEventHandler((o, a) => registerVote(8, playerVoting));
+                    playerPicture10.MouseClick += new MouseEventHandler((o, a) => registerVote(9, playerVoting));
+                    break;
+                case 1:
+                    playerPicture2.Image =
+                        Image.FromFile("../Resources/icon-quantumsheepBW.png");
+                    playerPicture1.MouseClick += new MouseEventHandler((o, a) => registerVote(0, playerVoting));
+                    playerPicture3.MouseClick += new MouseEventHandler((o, a) => registerVote(2, playerVoting));
+                    playerPicture4.MouseClick += new MouseEventHandler((o, a) => registerVote(3, playerVoting));
+                    playerPicture5.MouseClick += new MouseEventHandler((o, a) => registerVote(4, playerVoting));
+                    playerPicture6.MouseClick += new MouseEventHandler((o, a) => registerVote(5, playerVoting));
+                    playerPicture7.MouseClick += new MouseEventHandler((o, a) => registerVote(6, playerVoting));
+                    playerPicture8.MouseClick += new MouseEventHandler((o, a) => registerVote(7, playerVoting));
+                    playerPicture9.MouseClick += new MouseEventHandler((o, a) => registerVote(8, playerVoting));
+                    playerPicture10.MouseClick += new MouseEventHandler((o, a) => registerVote(9, playerVoting));
+                    break;
+                case 2:
+                    playerPicture3.Image =
+                        Image.FromFile("../Resources/icon-quantumsheepBW.png");
+                    playerPicture2.MouseClick += new MouseEventHandler((o, a) => registerVote(1, playerVoting));
+                    playerPicture1.MouseClick += new MouseEventHandler((o, a) => registerVote(2, playerVoting));
+                    playerPicture4.MouseClick += new MouseEventHandler((o, a) => registerVote(3, playerVoting));
+                    playerPicture5.MouseClick += new MouseEventHandler((o, a) => registerVote(4, playerVoting));
+                    playerPicture6.MouseClick += new MouseEventHandler((o, a) => registerVote(5, playerVoting));
+                    playerPicture7.MouseClick += new MouseEventHandler((o, a) => registerVote(6, playerVoting));
+                    playerPicture8.MouseClick += new MouseEventHandler((o, a) => registerVote(7, playerVoting));
+                    playerPicture9.MouseClick += new MouseEventHandler((o, a) => registerVote(8, playerVoting));
+                    playerPicture10.MouseClick += new MouseEventHandler((o, a) => registerVote(9, playerVoting));
+                    break;
+                case 3:
+                    playerPicture4.Image =
+                        Image.FromFile("../Resources/icon-quantumsheepBW.png");
+                    playerPicture2.MouseClick += new MouseEventHandler((o, a) => registerVote(1, playerVoting));
+                    playerPicture3.MouseClick += new MouseEventHandler((o, a) => registerVote(2, playerVoting));
+                    playerPicture1.MouseClick += new MouseEventHandler((o, a) => registerVote(3, playerVoting));
+                    playerPicture5.MouseClick += new MouseEventHandler((o, a) => registerVote(4, playerVoting));
+                    playerPicture6.MouseClick += new MouseEventHandler((o, a) => registerVote(5, playerVoting));
+                    playerPicture7.MouseClick += new MouseEventHandler((o, a) => registerVote(6, playerVoting));
+                    playerPicture8.MouseClick += new MouseEventHandler((o, a) => registerVote(7, playerVoting));
+                    playerPicture9.MouseClick += new MouseEventHandler((o, a) => registerVote(8, playerVoting));
+                    playerPicture10.MouseClick += new MouseEventHandler((o, a) => registerVote(9, playerVoting));
+                    break;
+                case 4:
+                    playerPicture5.Image =
+                        Image.FromFile("../Resources/icon-quantumsheepBW.png");
+                    playerPicture2.MouseClick += new MouseEventHandler((o, a) => registerVote(1, playerVoting));
+                    playerPicture3.MouseClick += new MouseEventHandler((o, a) => registerVote(2, playerVoting));
+                    playerPicture4.MouseClick += new MouseEventHandler((o, a) => registerVote(3, playerVoting));
+                    playerPicture1.MouseClick += new MouseEventHandler((o, a) => registerVote(4, playerVoting));
+                    playerPicture6.MouseClick += new MouseEventHandler((o, a) => registerVote(5, playerVoting));
+                    playerPicture7.MouseClick += new MouseEventHandler((o, a) => registerVote(6, playerVoting));
+                    playerPicture8.MouseClick += new MouseEventHandler((o, a) => registerVote(7, playerVoting));
+                    playerPicture9.MouseClick += new MouseEventHandler((o, a) => registerVote(8, playerVoting));
+                    playerPicture10.MouseClick += new MouseEventHandler((o, a) => registerVote(9, playerVoting));
+                    break;
+                case 5:
+                    playerPicture6.Image =
+                        Image.FromFile("../Resources/icon-quantumsheepBW.png");
+                    playerPicture2.MouseClick += new MouseEventHandler((o, a) => registerVote(1, playerVoting));
+                    playerPicture3.MouseClick += new MouseEventHandler((o, a) => registerVote(2, playerVoting));
+                    playerPicture4.MouseClick += new MouseEventHandler((o, a) => registerVote(3, playerVoting));
+                    playerPicture5.MouseClick += new MouseEventHandler((o, a) => registerVote(4, playerVoting));
+                    playerPicture1.MouseClick += new MouseEventHandler((o, a) => registerVote(5, playerVoting));
+                    playerPicture7.MouseClick += new MouseEventHandler((o, a) => registerVote(6, playerVoting));
+                    playerPicture8.MouseClick += new MouseEventHandler((o, a) => registerVote(7, playerVoting));
+                    playerPicture9.MouseClick += new MouseEventHandler((o, a) => registerVote(8, playerVoting));
+                    playerPicture10.MouseClick += new MouseEventHandler((o, a) => registerVote(9, playerVoting));
+                    break;
+                case 6:
+                    playerPicture7.Image =
+                        Image.FromFile("../Resources/icon-quantumsheepBW.png");
+                    playerPicture2.MouseClick += new MouseEventHandler((o, a) => registerVote(1, playerVoting));
+                    playerPicture3.MouseClick += new MouseEventHandler((o, a) => registerVote(2, playerVoting));
+                    playerPicture4.MouseClick += new MouseEventHandler((o, a) => registerVote(3, playerVoting));
+                    playerPicture5.MouseClick += new MouseEventHandler((o, a) => registerVote(4, playerVoting));
+                    playerPicture6.MouseClick += new MouseEventHandler((o, a) => registerVote(5, playerVoting));
+                    playerPicture1.MouseClick += new MouseEventHandler((o, a) => registerVote(6, playerVoting));
+                    playerPicture8.MouseClick += new MouseEventHandler((o, a) => registerVote(7, playerVoting));
+                    playerPicture9.MouseClick += new MouseEventHandler((o, a) => registerVote(8, playerVoting));
+                    playerPicture10.MouseClick += new MouseEventHandler((o, a) => registerVote(9, playerVoting));
+                    break;
+                case 7:
+                    playerPicture8.Image =
+                        Image.FromFile("../Resources/icon-quantumsheepBW.png");
+                    playerPicture2.MouseClick += new MouseEventHandler((o, a) => registerVote(1, playerVoting));
+                    playerPicture3.MouseClick += new MouseEventHandler((o, a) => registerVote(2, playerVoting));
+                    playerPicture4.MouseClick += new MouseEventHandler((o, a) => registerVote(3, playerVoting));
+                    playerPicture5.MouseClick += new MouseEventHandler((o, a) => registerVote(4, playerVoting));
+                    playerPicture6.MouseClick += new MouseEventHandler((o, a) => registerVote(5, playerVoting));
+                    playerPicture7.MouseClick += new MouseEventHandler((o, a) => registerVote(6, playerVoting));
+                    playerPicture1.MouseClick += new MouseEventHandler((o, a) => registerVote(7, playerVoting));
+                    playerPicture9.MouseClick += new MouseEventHandler((o, a) => registerVote(8, playerVoting));
+                    playerPicture10.MouseClick += new MouseEventHandler((o, a) => registerVote(9, playerVoting));
+                    break;
+                case 8:
+                    playerPicture9.Image =
+                        Image.FromFile("../Resources/icon-quantumsheepBW.png");
+                    playerPicture2.MouseClick += new MouseEventHandler((o, a) => registerVote(1, playerVoting));
+                    playerPicture3.MouseClick += new MouseEventHandler((o, a) => registerVote(2, playerVoting));
+                    playerPicture4.MouseClick += new MouseEventHandler((o, a) => registerVote(3, playerVoting));
+                    playerPicture5.MouseClick += new MouseEventHandler((o, a) => registerVote(4, playerVoting));
+                    playerPicture6.MouseClick += new MouseEventHandler((o, a) => registerVote(5, playerVoting));
+                    playerPicture7.MouseClick += new MouseEventHandler((o, a) => registerVote(6, playerVoting));
+                    playerPicture8.MouseClick += new MouseEventHandler((o, a) => registerVote(7, playerVoting));
+                    playerPicture1.MouseClick += new MouseEventHandler((o, a) => registerVote(8, playerVoting));
+                    playerPicture10.MouseClick += new MouseEventHandler((o, a) => registerVote(9, playerVoting));
+                    break;
+                case 9:
+                    playerPicture10.Image =
+                        Image.FromFile("../Resources/icon-quantumsheepBW.png");
+                    playerPicture2.MouseClick += new MouseEventHandler((o, a) => registerVote(1, playerVoting));
+                    playerPicture3.MouseClick += new MouseEventHandler((o, a) => registerVote(2, playerVoting));
+                    playerPicture4.MouseClick += new MouseEventHandler((o, a) => registerVote(3, playerVoting));
+                    playerPicture5.MouseClick += new MouseEventHandler((o, a) => registerVote(4, playerVoting));
+                    playerPicture6.MouseClick += new MouseEventHandler((o, a) => registerVote(5, playerVoting));
+                    playerPicture7.MouseClick += new MouseEventHandler((o, a) => registerVote(6, playerVoting));
+                    playerPicture8.MouseClick += new MouseEventHandler((o, a) => registerVote(7, playerVoting));
+                    playerPicture9.MouseClick += new MouseEventHandler((o, a) => registerVote(8, playerVoting));
+                    playerPicture1.MouseClick += new MouseEventHandler((o, a) => registerVote(9, playerVoting));
+                    break;
+#endregion
+            }
+                }
+                else
+                {
+                    statusLabel.Text = playerList[playerVoting].Name + ", You are a wolf, please select a sheep to kill!";
+                }
+        }
+
+        private void registerVote(int vote, int currentPlayer)
+        {
+            MessageBox.Show(playerList[currentPlayer].Name + ", voted for" + playerList[vote].Name);
         }
 
         private void registerPlayerButton_Click(object sender, EventArgs e)
@@ -329,7 +478,11 @@ namespace SheepWolves
                         statusLabel.Text = "All players Registered";
                         registerPlayerButton.Text = "Start Voting!";
                         registerPlayerButton.Enabled = false;
-                        battleMode();
+                        gameStates = GameStates.Accusing;
+                        statusLabel.Visible = false;
+                        registerPlayerButton.Visible = false;
+                        voteStartButton.Visible = true;
+                        voteStartButton.Select();
                     }
                 }
             }
@@ -350,6 +503,12 @@ namespace SheepWolves
             {
                 newGameButton_Click(null, null);
             }
+        }
+
+        private void voteStartButton_Click(object sender, EventArgs e)
+        {
+            currentPlayerNaming = 0;
+            battleMode(currentPlayerNaming);
         }
 
     }

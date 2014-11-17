@@ -7,4 +7,3 @@ C:\Users\Lalli\Documents\Visual Studio 2013\Projects\PetProjects\SheepWolves\She
 C:\Users\Lalli\Documents\Visual Studio 2013\Projects\PetProjects\SheepWolves\SheepWolves\obj\Debug\SheepWolves.csproj.GenerateResource.Cache
 C:\Users\Lalli\Documents\Visual Studio 2013\Projects\PetProjects\SheepWolves\SheepWolves\obj\Debug\SheepWolves.exe
 C:\Users\Lalli\Documents\Visual Studio 2013\Projects\PetProjects\SheepWolves\SheepWolves\obj\Debug\SheepWolves.pdb
-C:\Users\Lalli\Documents\Visual Studio 2013\Projects\PetProjects\SheepWolves\SheepWolves\obj\Debug\SheepWolves.CharacterCreation.resources

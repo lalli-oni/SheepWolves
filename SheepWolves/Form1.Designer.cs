@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.newGameButton = new System.Windows.Forms.Button();
             this.saveGameButton = new System.Windows.Forms.Button();
             this.playerNumberLabelStatic = new System.Windows.Forms.Label();
@@ -63,7 +62,7 @@
             this.registerPlayerButton = new System.Windows.Forms.Button();
             this.playerAliveNumberLabelStatic = new System.Windows.Forms.Label();
             this.playerAliveNumberLabelDynamic = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.voteStartButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicture1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicture2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicture3)).BeginInit();
@@ -142,6 +141,7 @@
             this.playerPicture1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture1.TabIndex = 6;
             this.playerPicture1.TabStop = false;
+            this.playerPicture1.Tag = "pictures";
             this.playerPicture1.Visible = false;
             // 
             // label1
@@ -175,6 +175,7 @@
             this.playerPicture2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture2.TabIndex = 8;
             this.playerPicture2.TabStop = false;
+            this.playerPicture2.Tag = "pictures";
             this.playerPicture2.Visible = false;
             // 
             // label3
@@ -197,6 +198,7 @@
             this.playerPicture3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture3.TabIndex = 10;
             this.playerPicture3.TabStop = false;
+            this.playerPicture3.Tag = "pictures";
             this.playerPicture3.Visible = false;
             // 
             // label4
@@ -219,6 +221,7 @@
             this.playerPicture4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture4.TabIndex = 12;
             this.playerPicture4.TabStop = false;
+            this.playerPicture4.Tag = "pictures";
             this.playerPicture4.Visible = false;
             // 
             // label5
@@ -241,6 +244,7 @@
             this.playerPicture5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture5.TabIndex = 14;
             this.playerPicture5.TabStop = false;
+            this.playerPicture5.Tag = "pictures";
             this.playerPicture5.Visible = false;
             // 
             // label6
@@ -263,6 +267,7 @@
             this.playerPicture6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture6.TabIndex = 16;
             this.playerPicture6.TabStop = false;
+            this.playerPicture6.Tag = "pictures";
             this.playerPicture6.Visible = false;
             // 
             // label7
@@ -285,6 +290,7 @@
             this.playerPicture7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture7.TabIndex = 18;
             this.playerPicture7.TabStop = false;
+            this.playerPicture7.Tag = "pictures";
             this.playerPicture7.Visible = false;
             // 
             // label8
@@ -307,6 +313,7 @@
             this.playerPicture8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture8.TabIndex = 20;
             this.playerPicture8.TabStop = false;
+            this.playerPicture8.Tag = "pictures";
             this.playerPicture8.Visible = false;
             // 
             // label9
@@ -329,6 +336,7 @@
             this.playerPicture9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture9.TabIndex = 22;
             this.playerPicture9.TabStop = false;
+            this.playerPicture9.Tag = "pictures";
             this.playerPicture9.Visible = false;
             // 
             // label10
@@ -351,6 +359,7 @@
             this.playerPicture10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.playerPicture10.TabIndex = 24;
             this.playerPicture10.TabStop = false;
+            this.playerPicture10.Tag = "pictures";
             this.playerPicture10.Visible = false;
             // 
             // deadList
@@ -426,11 +435,23 @@
             this.playerAliveNumberLabelDynamic.TabIndex = 33;
             this.playerAliveNumberLabelDynamic.Text = "0";
             // 
+            // voteStartButton
+            // 
+            this.voteStartButton.Location = new System.Drawing.Point(38, 331);
+            this.voteStartButton.Name = "voteStartButton";
+            this.voteStartButton.Size = new System.Drawing.Size(212, 49);
+            this.voteStartButton.TabIndex = 34;
+            this.voteStartButton.Text = "Start Voting!";
+            this.voteStartButton.UseVisualStyleBackColor = true;
+            this.voteStartButton.Visible = false;
+            this.voteStartButton.Click += new System.EventHandler(this.voteStartButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 428);
+            this.Controls.Add(this.voteStartButton);
             this.Controls.Add(this.playerAliveNumberLabelDynamic);
             this.Controls.Add(this.playerAliveNumberLabelStatic);
             this.Controls.Add(this.registerPlayerButton);
@@ -521,7 +542,7 @@
         private System.Windows.Forms.Button registerPlayerButton;
         private System.Windows.Forms.Label playerAliveNumberLabelStatic;
         private System.Windows.Forms.Label playerAliveNumberLabelDynamic;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button voteStartButton;
 
     }
 }
