@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.newGameButton = new System.Windows.Forms.Button();
             this.saveGameButton = new System.Windows.Forms.Button();
             this.playerNumberLabelStatic = new System.Windows.Forms.Label();
@@ -134,7 +135,7 @@
             // 
             // playerPicture1
             // 
-            this.playerPicture1.Image = global::SheepWolves.Properties.Resources.icon_quantumsheep;
+            this.playerPicture1.Image = ((System.Drawing.Image)(resources.GetObject("playerPicture1.Image")));
             this.playerPicture1.Location = new System.Drawing.Point(25, 76);
             this.playerPicture1.Name = "playerPicture1";
             this.playerPicture1.Size = new System.Drawing.Size(100, 100);
@@ -168,7 +169,7 @@
             // 
             // playerPicture2
             // 
-            this.playerPicture2.Image = global::SheepWolves.Properties.Resources.icon_quantumsheep;
+            this.playerPicture2.Image = ((System.Drawing.Image)(resources.GetObject("playerPicture2.Image")));
             this.playerPicture2.Location = new System.Drawing.Point(131, 76);
             this.playerPicture2.Name = "playerPicture2";
             this.playerPicture2.Size = new System.Drawing.Size(100, 100);
@@ -191,7 +192,7 @@
             // 
             // playerPicture3
             // 
-            this.playerPicture3.Image = global::SheepWolves.Properties.Resources.icon_quantumsheep;
+            this.playerPicture3.Image = ((System.Drawing.Image)(resources.GetObject("playerPicture3.Image")));
             this.playerPicture3.Location = new System.Drawing.Point(237, 76);
             this.playerPicture3.Name = "playerPicture3";
             this.playerPicture3.Size = new System.Drawing.Size(100, 100);
@@ -214,7 +215,7 @@
             // 
             // playerPicture4
             // 
-            this.playerPicture4.Image = global::SheepWolves.Properties.Resources.icon_quantumsheep;
+            this.playerPicture4.Image = ((System.Drawing.Image)(resources.GetObject("playerPicture4.Image")));
             this.playerPicture4.Location = new System.Drawing.Point(341, 76);
             this.playerPicture4.Name = "playerPicture4";
             this.playerPicture4.Size = new System.Drawing.Size(100, 100);
@@ -237,7 +238,7 @@
             // 
             // playerPicture5
             // 
-            this.playerPicture5.Image = global::SheepWolves.Properties.Resources.icon_quantumsheep;
+            this.playerPicture5.Image = ((System.Drawing.Image)(resources.GetObject("playerPicture5.Image")));
             this.playerPicture5.Location = new System.Drawing.Point(447, 76);
             this.playerPicture5.Name = "playerPicture5";
             this.playerPicture5.Size = new System.Drawing.Size(100, 100);
@@ -260,7 +261,7 @@
             // 
             // playerPicture6
             // 
-            this.playerPicture6.Image = global::SheepWolves.Properties.Resources.icon_quantumsheep;
+            this.playerPicture6.Image = ((System.Drawing.Image)(resources.GetObject("playerPicture6.Image")));
             this.playerPicture6.Location = new System.Drawing.Point(25, 195);
             this.playerPicture6.Name = "playerPicture6";
             this.playerPicture6.Size = new System.Drawing.Size(100, 100);
@@ -283,7 +284,7 @@
             // 
             // playerPicture7
             // 
-            this.playerPicture7.Image = global::SheepWolves.Properties.Resources.icon_quantumsheep;
+            this.playerPicture7.Image = ((System.Drawing.Image)(resources.GetObject("playerPicture7.Image")));
             this.playerPicture7.Location = new System.Drawing.Point(131, 195);
             this.playerPicture7.Name = "playerPicture7";
             this.playerPicture7.Size = new System.Drawing.Size(100, 100);
@@ -306,7 +307,7 @@
             // 
             // playerPicture8
             // 
-            this.playerPicture8.Image = global::SheepWolves.Properties.Resources.icon_quantumsheep;
+            this.playerPicture8.Image = ((System.Drawing.Image)(resources.GetObject("playerPicture8.Image")));
             this.playerPicture8.Location = new System.Drawing.Point(237, 195);
             this.playerPicture8.Name = "playerPicture8";
             this.playerPicture8.Size = new System.Drawing.Size(100, 100);
@@ -329,7 +330,7 @@
             // 
             // playerPicture9
             // 
-            this.playerPicture9.Image = global::SheepWolves.Properties.Resources.icon_quantumsheep;
+            this.playerPicture9.Image = ((System.Drawing.Image)(resources.GetObject("playerPicture9.Image")));
             this.playerPicture9.Location = new System.Drawing.Point(343, 195);
             this.playerPicture9.Name = "playerPicture9";
             this.playerPicture9.Size = new System.Drawing.Size(100, 100);
@@ -352,7 +353,7 @@
             // 
             // playerPicture10
             // 
-            this.playerPicture10.Image = global::SheepWolves.Properties.Resources.icon_quantumsheep;
+            this.playerPicture10.Image = ((System.Drawing.Image)(resources.GetObject("playerPicture10.Image")));
             this.playerPicture10.Location = new System.Drawing.Point(449, 195);
             this.playerPicture10.Name = "playerPicture10";
             this.playerPicture10.Size = new System.Drawing.Size(100, 100);

@@ -12,25 +12,25 @@ namespace ConsoleTesting
 
         static void Main(string[] args)
         {
-            prepareStatesList(5);
+            prepareStatesList2(5);
             Console.WriteLine("---");
-            prepareStatesList(6);
+            prepareStatesList2(6);
             Console.WriteLine("---");
-            prepareStatesList(7);
+            prepareStatesList2(7);
             Console.WriteLine("---");
-            prepareStatesList(8);
+            prepareStatesList2(8);
             Console.WriteLine("---");
-            prepareStatesList(9);
+            prepareStatesList2(9);
             Console.WriteLine("---");
-            prepareStatesList(10);
+            prepareStatesList2(10);
             Console.WriteLine("---");
-            prepareStatesList(11);
+            prepareStatesList2(11);
             Console.WriteLine("---");
-            prepareStatesList(12);
+            prepareStatesList2(12);
             Console.WriteLine("---");
-            prepareStatesList(13);
+            prepareStatesList2(13);
             Console.WriteLine("---");
-            prepareStatesList(14);
+            prepareStatesList2(14);
             Console.WriteLine("---");
             Console.ReadKey();
         }
@@ -42,6 +42,22 @@ namespace ConsoleTesting
                 sheeps.Add(false);
             }
             for (decimal i = 0; i < playerNumberPara - (playerNumberPara / Convert.ToDecimal(3)); i++)
+            {
+                sheeps.Add(true);
+            }
+            Console.WriteLine("Total is: " + sheeps.Count);
+            Console.WriteLine("Sheeps are: " + sheeps.Count(c => c));
+            Console.WriteLine("Wolves are: " + sheeps.Count(c => !c));
+            sheeps.Clear();
+        }
+
+        static void prepareStatesList2(decimal playerNumberPara)
+        {
+            for (decimal o = 0; o < (playerNumberPara % 30); o++)
+            {
+                sheeps.Add(false);
+            }
+            for (decimal i = 0; i < (playerNumberPara % 60); i++)
             {
                 sheeps.Add(true);
             }

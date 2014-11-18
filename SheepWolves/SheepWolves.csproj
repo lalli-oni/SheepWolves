@@ -85,7 +85,9 @@
     <None Include="Resources\icon-quantumsheep.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\icon-quantumsheepBW.png" />
+    <Content Include="Resources\wolf.png" />
+    <None Include="Resources\sheep.png" />
+    <Content Include="Resources\sheepBW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
