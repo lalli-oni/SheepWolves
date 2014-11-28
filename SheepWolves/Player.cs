@@ -25,7 +25,7 @@ namespace SheepWolves
         private State _state;
         private Animal _sheep;
 
-        
+
         public string Name
         {
             get { return _name; }

@@ -144,6 +144,7 @@
             this.playerPicture1.TabStop = false;
             this.playerPicture1.Tag = "pictures";
             this.playerPicture1.Visible = false;
+            this.playerPicture1.Click += new System.EventHandler(this.playerPicture1_Click);
             // 
             // label1
             // 
